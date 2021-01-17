@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Example Code Book - Mind Map (power by jsMind)</title>
+    <link href="../css/jsmind.css" rel="stylesheet"/>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../pnotify/dist/pnotify.css" rel="stylesheet">
+    <link href="../pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+    <link href="../pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+    <link href='../css/spectrum.css' rel='stylesheet'/>
+    <link href="../css/mind.css" rel="stylesheet"/>
+	<link rel="shortcut icon" href="#"/>
+</head>
+<body>
+<div id="layout">
+    <div id="jsmind_container" class="jsmind-container"></div>
+
+    <div id="div_hidden" style="display:none">
+      <input class="file" type="file" id="image-chooser" accept="image/*"/>
+      <input class="file" type="file" id="image-chooser-change" accept="image/*"/>
+      <input id="file_input" class="file_input" type="file" onchange="open_file();"/>
+	  <input id="file_input_nodearray" class="file_input" type="file" accept=".jm" onchange="open_nodearray();"/>
+      <input id="file_input_freemind" class="file_input" type="file" onchange="open_freemind();"/>
+    </div>
+
+    <div id="bgColorPickerDiv" style="display:none">
+        <input type='text' id="color-picker-bg"/>
+    </div>
+
+    <div id="textColorPickerDiv" style="display:none">
+        <input type='text' id="color-picker-text"/>
+    </div>
+    
+    <ul class='custom-menu' id="custom-menu">
+        <li data-action="add_node" >Add child node ... | Insert key<i class="fa fa-plus-square pull-left"></i></li>
+        <li data-action="add_image_node">Add image node<i class="fa fa-file-image-o pull-left"></i></li>
+        <li data-action="edit_node">Edit text ........ | Double click/F2<i class="fa fa-pencil pull-left"></i></li>
+        <li data-action="del_node" >Remove node ...... | Delete key<i class="fa fa-minus-square pull-left"></i></li>
+        <li data-action="save_online" id="li_save_online">Save online<i class="fa fa-save pull-left"></i></li>
+        <li class="menu-line"><hr></li>
+        <li data-action="increase_text_font_size">Increase font size<i class="fa fa-plus-square-o pull-left"></i></li>
+        <li data-action="decrease_text_font_size">Decrease font size<i class="fa fa-minus-square-o pull-left"></i></li>
+        <li data-action="change_text_color">Change text color<i class="fa fa-font pull-left"></i></li>
+        <li data-action="change_background_color">Change bg-color<i class="fa fa-dashboard pull-left"></i></li>
+        <li data-action="change_background_image">Change bg-image<i class="fa fa-file-image-o pull-left"></i></li>
+        <li data-action="remove_background_image">Remove bg-image<i class="fa fa-file-o pull-left"></i></li>
+        <li class="menu-line"><hr></li>
+        <li class='has-submenu'>View >
+            <ul class='submenu'>
+                <li data-action="expand_all">Expan all<i class="fa fa-expand pull-left"></i></li>
+                <li data-action="collapse_all">Collapse all<i class="fa fa-compress pull-left"></i></li>
+                <li data-action="zoom_in">Zoom in<i class="fa fa-search-minus pull-left"></i></li>
+                <li data-action="zoom_out">Zoom out<i class="fa fa-search-plus pull-left"></i></li>
+                <li data-action="screen_shot">Screen shot<i class="fa fa-camera pull-left"></i></li>
+            </ul>
+        </li>
+        <li class='has-submenu'>Local File >
+            <ul class='submenu'>
+                <li data-action="click_open_file" style="display:none;">Open nodetree file<i class="fa fa-folder-open-o pull-left"></i></li>
+                <li data-action="save_file" style="display:none;">Save nodetree file<i class="fa fa-save pull-left"></i></li>
+                <li class="menu-line" style="display:none;"><hr></li>
+                <li data-action="click_open_nodearray">Open nodearray file<i class="fa fa-folder-open-o pull-left"></i></li>
+                <li data-action="save_nodearray_file">Save nodearray file<i class="fa fa-save pull-left"></i></li>
+                <li class="menu-line"><hr></li>
+                <li data-action="click_open_freemind">Open freemind(.mm) file<i class="fa fa-folder-open-o pull-left"></i></li>
+                <li data-action="save_freemind_file">Save freemind(.mm) file<i class="fa fa-save pull-left"></i></li>
+            </ul>
+        </li>
+        <li class='has-submenu'>Theme >
+            <ul class='submenu'>
+                <li data-action="theme_greensea" style="background-color: #1abc9c;">Greensea(default)</li>
+                <li data-action="theme_nephrite" style="background-color: #2ecc71;">Nephrite</li>
+                <li data-action="theme_success" style="background-color: #5cb85c;">Success</li>
+                <li data-action="theme_info" style="background-color: #5dc0de;">Info</li>
+                <li data-action="theme_belizehole" style="background-color: #3498db;">Belizehole</li>
+                <li data-action="theme_primary" style="background-color: #428bca;">Primary</li>
+                <li data-action="theme_orange" style="background-color: #f1c40f;">Orange</li>
+                <li data-action="theme_warning" style="background-color: #f0ad4e;">Warning</li>
+                <li data-action="theme_pumpkin" style="background-color: #e67e22;">Pumpkin</li>
+                <li data-action="theme_danger" style="background-color: #d9534f;">Danger</li>
+                <li data-action="theme_pomegranate" style="background-color: #e74c3c;">Pomegranate</li>
+                <li data-action="theme_wisteria" style="background-color: #9b59b6;">Wisteria</li>
+                <li data-action="theme_" style="background-color: #fff;">White</li>
+                <li data-action="theme_clouds" style="background-color: #ecf0f1;">Clouds</li>
+                <li data-action="theme_asbestos" style="background-color: #95a5a6;">Asbestos</li>
+                <li data-action="theme_asphalt" style="background-color: #34495e;">Asphalt</li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../pnotify/dist/pnotify.js"></script>
+<script src="../pnotify/dist/pnotify.buttons.js"></script>
+<script src="../pnotify/dist/pnotify.nonblock.js"></script>
+<script src="../js/jsmind.js"></script>
+<script src="../js/jsmind.draggable.js"></script>
+<script src="../js/jsmind.screenshot.js"></script>
+<script src="../js/utl.js"></script>
+<script src='../js/spectrum.js'></script>
+<script src="../js/mind.js"></script>
+</body>
+</html>

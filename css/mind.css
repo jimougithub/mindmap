@@ -1,0 +1,102 @@
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    height: 100%;
+    background-color:#eee;
+}
+#layout{
+    height:100%; 
+    width:100%;
+}
+li{margin-top:2px; margin-bottom:2px;}
+button{width:140px;}
+select{width:140px;}
+.file_input{width:100px;}
+button.sub{width:100px;}
+
+.jsmind-container{
+    margin:0 auto;
+    overflow-y: scroll;
+    float: left;
+    background-color:#eee;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;     /* Firefox */
+}
+
+.jsmind-container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.hide {
+    display: none;
+}
+
+/*menu ================================*/
+.custom-menu {
+    display: none;
+    z-index: 1000;
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid #CCC;
+    white-space: nowrap;
+    font-family: monospace, "Courier New", Courier;
+    background: #FFF;
+    color: #333;
+    border-radius: 5px;
+    padding: 0;
+}
+
+/* Each of the items in the list */
+.custom-menu li {
+    padding: 1px 10px;
+    cursor: pointer;
+    list-style-type: none;
+    transition: all .3s ease;
+    user-select: none;
+}
+
+.custom-menu i {
+    padding: 4px 0px;
+    cursor: pointer;
+    list-style-type: none;
+    transition: all .3s ease;
+    user-select: none;
+}
+
+.custom-menu li:hover {
+    background: rgb(6, 102, 197);
+    color: #FFF;
+}
+
+.custom-menu .menu-line {
+    background: #FFF;
+    color: #333;
+    cursor:auto;
+    height:25px;
+    border-width:0;
+}
+
+.custom-menu .menu-line:hover {
+    background: #FFF;
+    color: #333;
+}
+
+.custom-menu ul.submenu {
+    padding: 1px 10px;
+    display: none;
+}
+
+.custom-menu .has-submenu:hover {
+    padding: 1px 10px;
+    background: #FFF;
+    color: #333;
+}
+
+.custom-menu .has-submenu:hover .submenu {
+    display: block;
+    background: #FFF;
+    color: #333;
+}
+/*menu end =============================*/
